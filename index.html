@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link type="text/css" rel="styleSheet" href="./css/index.css">
+</head>
+
+<body>
+    <div id="logo">
+        <img src="./images/akari.jpg">
+    </div>
+    <div class="desc">欢迎使用&nbsp;WAdmin</div>
+    <div class="pw_li">
+        <input type="text" placeholder="用户名" id="account">
+        <img src="./images/check_members/account.png" id="user_icon">
+    </div>
+    <div class="pw_li">
+        <input type="password" placeholder="密码" id="password">
+        <img src="./images/check_members/cant_see.png" id="eye">
+    </div>
+    <div><input type="button" value="登陆" id="login"></div>
+    <div id="app">
+        <a href="">忘记密码了？</a> | <a href="">注册一个新账号</a>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./js/common.js"></script>
+    <script>
+        function login(account, password) {
+            return new Promise((reslove, reject) => {
+                let xhr = new XMLHttpRequest();
+                let user = `account=${account}&password=${password}`;
+                xhr.open('post', 'https://ty.php800.cn/api/member/login.php', true);
+                xhr.setRequestHeader('SAT', '1234567');
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                xhr.send(user);
+                xhr.onreadystatechange = function () {
+                    if (this.status === 200) {
+                        if (this.readyState === 4) {
+                            reslove(this.responseText);
+                        }
+                    }
+                }
+            })
+        }
+        document.getElementById('login').addEventListener('click', function () {
+            let account = document.getElementById('account').value;
+            let password = document.getElementById('password').value;
+            if (account == '') {
+                myalert("请填写账号", 'false');
+            } else if (password == '') {
+                myalert("请填写密码", 'false');
+            } else {
+                login(account, password).then(res => {
+                    if (JSON.parse(res).verify === true) {
+                        let user = JSON.parse(res);
+                        // let mytoken = `${user.user.email}-${user.token}`;
+                        // user.token = mytoken;
+                        localStorage.setItem('user', JSON.stringify(user));
+                        localStorage.removeItem('pagedate');
+                        myalert('登陆成功', 'true').then(res => {
+                            location.href = './admin.html';
+                        })
+                    } else {
+                        myalert(JSON.parse(res).msg, 'false');
+                    }
+                })
+            }
+        });
+        //回车登陆
+        document.onkeydown=function(e){
+            if (e.keyCode == 13) {
+                let account = document.getElementById('account').value;
+                let password = document.getElementById('password').value;
+                if (account == '') {
+                    myalert("请填写账号", 'false');
+                } else if (password == '') {
+                    myalert("请填写密码", 'false');
+                } else {
+                    login(account, password).then(res => {
+                        if (JSON.parse(res).verify === true) {
+                            let user = JSON.parse(res);
+                            // let mytoken = `${user.user.email}-${user.token}`;
+                            // user.token = mytoken;
+                            localStorage.setItem('user', JSON.stringify(user));
+                            localStorage.removeItem('pagedate');
+                            myalert('登陆成功', 'true').then(res => {
+                                location.href = './admin.html';
+                            })
+                        } else {
+                            myalert(JSON.parse(res).msg, 'false');
+                        }
+                    })
+                }
+            }
+        }
+        function eye() {
+            let state = 'true';
+            let pw = document.getElementById('password');
+            document.getElementById('eye').addEventListener('click', function () {
+                if (state == 'true') {
+                    state = 'false';
+                    this.src = './images/check_members/can_see.png';
+                    pw.type = 'text';
+                } else {
+                    state = 'true';
+                    this.src = './images/check_members/cant_see.png';
+                    pw.type = 'password';
+                }
+            })
+        }
+        eye();
+    </script>
+</body>
+
+</html>

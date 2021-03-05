@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WAdmin</title>
+    <link type="text/css" rel="styleSheet" href="./css/admin.css">
+</head>
+
+<body>
+    <div id="out_directory">
+        <div id="directory1">
+            <a id="l_logo">WAdmin</a>
+            <ul>
+                <li class="li_line"></li>
+                <!-- 我的-->
+                <li class="lis flis1"><img src=""><span class="classify_text">我的</span></li>
+                <li class='child_lis1' id="child_li">
+                    <ul>
+                        <li class="lis2" id="personal_data_btn" style="color: white;">个人资料</li>
+                    </ul>
+                </li>
+                <li class="li_line"></li>
+                <!-- 会员管理-->
+                <li class="lis flis2"><img src=""><span class="classify_text">会员管理</span></li>
+                <li class='child_lis2' id="child_li">
+                    <ul>
+                        <li class="lis2" id="check_members_btn">查看会员</li>
+                        <li class="lis2" id="add_members_btn">添加会员</li>
+                        <li class="lis2" id="role_list_btn">角色列表</li>
+                    </ul>
+                </li>
+                <li class="li_line"></li>
+                <!-- 文章管理-->
+                <li class="lis flis3"><img src=""><span class="classify_text">文章管理</span></li>
+                <li class='child_lis3' id="child_li">
+                    <ul>
+                        <li class="lis2" id="see_article_btn">查看文章</li>
+                        <li class="lis2" id="add_article_btn">添加文章</li>
+                        <li class="lis2" id="label_list_btn">查看分类</li>
+                        <li class="lis2" id="add_label_btn">添加分类</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div id="directory2" style="display: none;">
+        </div>
+    </div>
+    <div id="rig">
+        <div class="header">
+            <div class="nav">
+                <div id="nav_btn">
+                    <p>三</p>
+                </div>
+                <input type="text" placeholder="请输入您需要查找的内容..." id='nav_search'>
+            </div>
+            <div id="avatar">
+                <div id="out_user_avatar">
+                    <img src="" id="user_avatar">
+                    <input type="file" id="upload_avatar2" />
+                </div>
+                <span id="user_name"></span>
+                <img src="./images/关机1.png" id="exit">
+            </div>
+        </div>
+        <div id="main">
+            <!-- check_members -->
+            <div id="check_members" style="display: none;" class="main_page">
+                <ul id="checkmembers_list">
+                    <li id="head_li">
+                        <span style="width: 100px;">id</span>
+                        <span style="width: 100px;">昵称</span>
+                        <span style="width: 100px;">性别</span>
+                        <span style="width: 100px;">身份</span>
+                        <span style="width: 100px;">头像</span>
+                        <span>注册时间</span>
+                        <span>手机号码</span>
+                        <span>email</span>
+                        <span>操作</span>
+                    </li>
+                    <li class="checkmembers_li">
+                        <span style="width: 100px;"></span>
+                        <span style="width: 100px;"></span>
+                        <span style="width: 100px;"></span>
+                        <span style="width: 100px;"></span>
+                        <span style="width: 100px;"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </li>
+                    <li class="checkmembers_li">
+                        <span style="width: 100px;"></span>
+                        <span style="width: 100px;"></span>
+                        <span style="width: 100px;"></span>
+                        <span style="width: 100px;"></span>
+                        <span style="width: 100px;"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </li>
+                    <li class="checkmembers_li">
+                        <span style="width: 100px;"></span>
+                        <span style="width: 100px;"></span>
+                        <span style="width: 100px;"></span>
+                        <span style="width: 100px;"></span>
+                        <span style="width: 100px;"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </li>
+                    <li class="checkmembers_li">
+                        <span style="width: 100px;"></span>
+                        <span style="width: 100px;"></span>
+                        <span style="width: 100px;"></span>
+                        <span style="width: 100px;"></span>
+                        <span style="width: 100px;"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </li>
+                    <li class="checkmembers_li">
+                        <span style="width: 100px;"></span>
+                        <span style="width: 100px;"></span>
+                        <span style="width: 100px;"></span>
+                        <span style="width: 100px;"></span>
+                        <span style="width: 100px;"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </li>
+                    <li class="checkmembers_li">
+                        <span style="width: 100px;"></span>
+                        <span style="width: 100px;"></span>
+                        <span style="width: 100px;"></span>
+                        <span style="width: 100px;"></span>
+                        <span style="width: 100px;"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </li>
+                    <li class="checkmembers_li">
+                        <span style="width: 100px;"></span>
+                        <span style="width: 100px;"></span>
+                        <span style="width: 100px;"></span>
+                        <span style="width: 100px;"></span>
+                        <span style="width: 100px;"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </li>
+                    <li class="checkmembers_li">
+                        <span style="width: 100px;"></span>
+                        <span style="width: 100px;"></span>
+                        <span style="width: 100px;"></span>
+                        <span style="width: 100px;"></span>
+                        <span style="width: 100px;"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </li>
+                    <li class="checkmembers_li">
+                        <span style="width: 100px;"></span>
+                        <span style="width: 100px;"></span>
+                        <span style="width: 100px;"></span>
+                        <span style="width: 100px;"></span>
+                        <span style="width: 100px;"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </li>
+                    <li class="checkmembers_li">
+                        <span style="width: 100px;"></span>
+                        <span style="width: 100px;"></span>
+                        <span style="width: 100px;"></span>
+                        <span style="width: 100px;"></span>
+                        <span style="width: 100px;"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </li>
+
+                </ul>
+                <div class="memberlist_nav" style="margin-top: 20px;">
+
+                </div>
+            </div>
+            <!-- 个人资料 -->
+            <div id="personal_data" class="main_page" style="display: none;">
+                <div id="my_personaldata">
+                    <div class="personaldata_title">
+                        个人资料
+                    </div>
+                    <div id="my_avatar">
+                        <img src="./images/akari.jpg">
+                    </div>
+                    <div id="p_upload_avatar">
+                        <input type="file" id="upload_avatar" />
+                        <div id="upload_avatar_css">
+                            修改头像
+                        </div>
+                    </div>
+                    <div id="mydesc">
+                        <div id="user_name2"></div>
+                        <div class="mydesc_title">关于我</div>
+                        <div class="mydesc_area">
+                            会点前端技术，div+css啊，jS之类的，不是很精；热爱生活，热爱互联网，热爱新技术；有一个小的团队，在不断的寻求新的突破。
+                            <span id="change_password">修改密码</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="my_article">
+                    <div id="personal_head"> 动态</div>
+                    <div id="p_article_area">
+                        <ul id="personal_article">
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- 添加会员 -->
+            <div id="add_members" class="main_page" style="display: none;">
+                <div class="add_area">
+                    <div class="add_li" id="im_add_li">
+                        <span>用户头像</span>
+                        <input type='file' id="c_avatar">
+                        <div id="out_pre_avatar">
+                            <img src="./images/上传图片.png" style="width: 40px;height: 40px;">
+                            <img src="" id="pre_avatar">
+                        </div>
+                    </div>
+                    <div class="add_li">
+                        <span>用户昵称</span>
+                        <input type='text' id="c_nickname">
+                    </div>
+                    <div class="add_li">
+                        <span>
+                            <div>*</div>手机号码
+                        </span>
+                        <input type='text' id="c_phone">
+                    </div>
+                    <div class="add_li">
+                        <span>
+                            <div>*</div>电子邮箱
+                        </span>
+                        <input type='text' id="c_email">
+                    </div>
+                    
+                    <div class="add_li">
+                        <span>
+                            <div>*</div>密码
+                        </span>
+                        <input type='password' id="c_password">
+                    </div>
+                    <div class="add_li">
+                        <span>
+                            <div>*</div>确认密码
+                        </span>
+                        <input type='password' id="c_password2">
+                    </div>
+                    <div class="add_li">
+                        <span>角色选择</span>
+                        <input type="button" id="choose_role" value="请选择角色">
+                        <img src="./images/member_list/上一页.png">
+                        <ul id="choose_list">
+                            <li id='-1'>我不想选择</li>
+                            <li id='0'>普通会员</li>
+                            <li style="border-bottom: none;" id='35'>超级会员</li>
+                        </ul>
+                    </div>
+                    <div class="add_radio_li" id="">
+                        <span>性别</span>
+                        <p>男</p><input type='radio' id="1" class="sex" name="sex" value="">
+                        <p>女</p><input type='radio' id="0" class="sex" name="sex" value="">
+                    </div>
+                    <div class="add_btn">
+                        <input type="button" value="立即创建" id="create_member">
+                        <input type="button" value="重置" id="reset_member">
+                    </div>
+                </div>
+            </div>
+            <!-- 角色列表 -->
+            <div id="role_list" class="main_page" style="display: none;">
+                <div class="role_btn_box">
+                    <span id="role_addrole">增加角色</span>
+                    <span id="role_seerole">查看角色</span>
+                </div>
+                <ul id="my_role_list">
+                    <li class="role_li" id="role_li_title">
+                        <span>id</span>
+                        <span>名称</span>
+                        <span>权限</span>
+                        <span>操作</span>
+                    </li>
+                </ul>
+                <div id="add_role">
+                    <div class="add_role_title">增加角色</div>
+                    <div class="add_role_area">
+                        <div class="add_role_li">
+                            <span>角色名称</span>
+                            <input type="text" id="role_name" value="">
+                        </div>
+                        <div class="add_role_li" id="permissions">
+                            <span>权限</span>
+                            <input type="checkbox" value="" id="systemindex">
+                            <p>系统设置</p>
+                            <input type="checkbox" value="" id="articleindex">
+                            <p>文章管理</p>
+                            <input type="checkbox" value="" id="memberindex">
+                            <p>会员管理</p>
+                        </div>
+                        <div class="add_role_li">
+                            <span></span>
+                            <div id="add_role_create">
+                                立即创建
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <!-- 发布文章 -->
+            <div id="add_article" class="main_page" style="display: none;">
+                <div id="add_article_area">
+                    <div class="add_article_title">发布文章</div>
+                    <div class=" tips_li" style="margin:20px 0 20px 0;">
+                        <span>文章标题</span>
+                        <input type="text" id="article_title" value=""
+                            style="height: 40px;    border: solid 1px #e0e2e6;">
+                    </div>
+                    <div class="tips_li" style="margin-bottom: 20px;">
+                        <span>文章分类</span>
+                        <input type="text" id="choose_article_class" class="choose_article_class"
+                            style="height: 40px;    border: solid 1px #e0e2e6;">
+                    </div>
+                    <div id="article_area" style="margin-bottom: 20px;">
+                        <span></span>
+                        <div id="article_editor"></div>
+                    </div>
+                    <div class="add_article_li tips_li">
+                        <span></span>
+                        <div id="right_add_article" class="tips_button">
+                            发布文章
+                        </div>
+                        <div id="cancel_add_article" class="c_tips_button">
+                            重置
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 查看文章 -->
+            <div id="see_article" class="main_page" style="display: none;">
+                <ul id="see_article_area">
+                    <li id="see_article_title" class="my_article_list">
+                        <span>id</span>
+                        <span>标题</span>
+                        <span>分类</span>
+                        <span>
+                            <p>内容</p>
+                        </span>
+                        <span>操作</span>
+                    </li>
+                </ul>
+            </div>
+            <!-- 标签列表 -->
+            <div id="label_list" class="main_page" style="display: none;">
+                <ul id="my_label_list">
+                    <li class="label_li">
+                        <span>ID</span>
+                        <span>分类</span>
+                        <span>操作</span>
+                    </li>
+                </ul>
+            </div>
+            <!-- 添加标签 -->
+            <div id="add_label" class="main_page" style="display: none;">
+                <div class="add_label_title">添加分类</div>
+                <div class="add_label_li">
+                    <span>分类名称</span><input type="text" id="new_label_name">
+                </div>
+                <div class="tips_li">
+                    <sapn style="width: 150px;"></sapn>
+                    <div class="tips_button" id="right_add_label">添加</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 修改角色 -->
+    <div id="change_role" style="display: none;" class="tips">
+        <div class="change_role_area tips_area">
+            <div class="change_role_li tips_li">
+                <span>角色名称</span>
+                <input type="text" id="change_role_name" value="">
+            </div>
+            <div class="change_role_li tips_checkbox_li">
+                <span>权限</span>
+                <input type="checkbox" value="" id="change_systemindex">
+                <p>系统设置</p>
+                <input type="checkbox" value="" id="change_articleindex">
+                <p>文章管理</p>
+                <input type="checkbox" value="" id="change_memberindex">
+                <p>会员管理</p>
+            </div>
+            <div class="change_role_li tips_li">
+                <span></span>
+                <div id="change_role_create" class="tips_button">
+                    立即修改
+                </div>
+                <div id="cancel_changerole" class="tips_button">
+                    取消修改
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- 编辑用户 -->
+    <div id="edit_member" style="display: none;" class="tips">
+        <div class="edit_member_area tips_area">
+            <div class="edit_member_li tips_li">
+                <span>用户名称</span>
+                <input type="text" id="edit_member_nickname" value="">
+            </div>
+            <div class="edit_member_li tips_li">
+                <span>用户ID</span>
+                <input type="text" id="edit_member_roleid" value="">
+            </div>
+            <div class="edit_member_li tips_li">
+                <span>权限等级</span>
+                <input type="text" id="edit_member_authority" value="" placeholder="1~9">
+            </div>
+            <div class="edit_member_li tips_checkbox_li">
+                <span>性别</span>
+                <input type="radio" value="1" id="edit_member_male" name="sex">
+                <p>男</p>
+                <input type="radio" value="0" id="edit_member_famale" name="sex">
+                <p>女</p>
+            </div>
+            <div class="edit_member_li tips_li">
+                <span></span>
+                <div id="right_edit_member" class="tips_button">
+                    提交修改
+                </div>
+                <div id="cancel_edit_member" class="c_tips_button">
+                    取消修改
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 查看用户 -->
+    <div id="see_member" style="display: none;" class="tips">
+
+    </div>
+    <!-- 修改密码 -->
+    <div id="change_password_tip" style="display: none;" class="tips">
+        <div class="change_password_li tips_li">
+            <span>新密码</span>
+            <input type="password" id="change_password_first" value="">
+        </div>
+        <div class="change_password_li tips_li">
+            <span>确认密码</span>
+            <input type="password" id="change_password_second" value="">
+        </div>
+        <div class="change_password_li tips_li">
+            <span></span>
+            <div id="right_change_password" class="tips_button">
+                确定修改
+            </div>
+            <div id="cancel_change_password" class="c_tips_button">
+                取消修改
+            </div>
+        </div>
+    </div>
+    <div id="see_this_article" style="display: none; flex-direction: column;" class="tips">
+
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/wangeditor@latest/dist/wangEditor.min.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/admin.js">
+
+    </script>
+</body>
+
+</html>

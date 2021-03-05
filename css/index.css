@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    min-width: 500px;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f3f4;
+    position: relative;
+}
+
+/* 自定义弹出框 */
+#myalert {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    min-width: 150px;
+    padding: 10px;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    animation-name: myalert;
+    animation-duration: .4s;
+    animation-iteration-count: linear;
+}
+
+@keyframes myalert {
+    0% {
+        left: 49.5%;
+    }
+
+    10% {
+        left: 50.5%;
+    }
+
+    20% {
+        left: 49.5%;
+    }
+
+    30% {
+        left: 50.5%;
+    }
+
+    40% {
+        left: 49.5%;
+    }
+
+    50% {
+        left: 50.5%;
+    }
+
+    60% {
+        left: 49.5%;
+    }
+
+    70% {
+        left: 50.5%;
+    }
+
+    80% {
+        left: 49.5%;
+    }
+
+    90% {
+        left: 50.5%;
+    }
+
+    100% {
+        left: 50%;
+    }
+}
+
+/* 自定义弹出框 */
+#logo {
+    width: 300px;
+    height: 300px;
+    margin-bottom: 5px;
+    margin-top: 100px;
+}
+
+#logo img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.desc {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color: #676a6c;
+}
+
+#account,
+#password {
+    display: block;
+    border-color: #cfdadd;
+    border-radius: 2px;
+    width: 300px;
+    height: 30px;
+    padding: 6px 25px 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    border: 1px solid #cfdadd;
+    box-sizing: border-box;
+    overflow: hidden;
+    outline: none;
+    margin-bottom: 15px;
+}
+
+#account:focus,
+#password:focus {
+    border: 1px solid #24B7E5;
+}
+
+#login {
+    display: block;
+    border-color: #cfdadd;
+    border-radius: 2px;
+    width: 300px;
+    height: 30px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #ffffff;
+    background-color: #7266ba;
+    border: 1px solid #7266ba;
+    box-sizing: border-box;
+    outline: none;
+    margin-bottom: 15px;
+}
+
+#login:active {
+    background-color: #214E74;
+}
+
+#app {
+    color: #d6d3e6;
+    font-size: 12px;
+}
+
+#app a {
+    color: #337ab7;
+    text-decoration: none;
+}
+
+.pw_li {
+    position: relative;
+}
+
+#eye {
+    position: absolute;
+    right: 5px;
+    top: 4px;
+    width: 22px;
+}
+
+#user_icon {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    width: 14px;
+}
